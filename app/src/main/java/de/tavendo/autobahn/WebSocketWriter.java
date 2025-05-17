@@ -30,6 +30,7 @@ import java.lang.ref.WeakReference;
 import java.net.Socket;
 import java.net.SocketException;
 import java.nio.ByteBuffer;
+import java.security.SecureRandom;
 import java.util.Random;
 
 /**
@@ -46,7 +47,7 @@ public class WebSocketWriter extends Thread {
 	private static final int WEB_SOCKETS_VERSION = 13;
 	private static final String CRLF = "\r\n";
 
-	private final Random mRandom = new Random();
+	private final Random mRandom = new SecureRandom();
 	private final Handler mWebSocketConnectionHandler;
 	private final WebSocketOptions mWebSocketOptions;
 	private final ByteBuffer mApplicationBuffer;
